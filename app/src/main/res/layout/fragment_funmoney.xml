@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="#006dc2"
+    tools:context=".Main_Application$FunMoney"
+    android:orientation="vertical">
+
+
+    <TextView android:id="@+id/funmoney_quote_label" android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:textColor="#FFFFFF"
+        android:text="Inspirational quote here."
+        android:layout_gravity="center"
+        android:layout_weight="1" />
+
+    <ImageView
+        android:id="@+id/funmoney_image"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:src="@mipmap/ic_placeholder"
+        android:layout_gravity="center"
+        android:layout_weight="1" />
+
+    <TextView android:id="@+id/funmoney_label"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:textColor="#FFFFFF"
+        android:text="@string/funmoney_text"
+        android:layout_gravity="center"
+        android:layout_weight="1" />
+
+    <NumberPicker android:id="@+id/funmoney" android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="1" />
+
+    <TextView android:id="@+id/swipe_message"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:textColor="#FFFFFF"
+        android:text="@string/swipe_message_text"
+        android:layout_gravity="center"
+        android:layout_weight="1" />
+
+
+</LinearLayout>
