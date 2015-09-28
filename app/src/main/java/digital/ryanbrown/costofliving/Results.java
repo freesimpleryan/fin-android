@@ -2,9 +2,23 @@ package digital.ryanbrown.costofliving;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 /**
  * Created by Ryan on 9/26/2015.
@@ -37,4 +51,74 @@ public class Results extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_results, container, false);
         return rootView;
     }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser){
+        super.setUserVisibleHint(isVisibleToUser);
+
+        if(isVisibleToUser && Data.NEW_SESSION){
+            final View rootView = this.getView();
+            Data.stubData();
+            RequestQueue rq = Volley.newRequestQueue(getActivity());
+            CustomRequest jsReq = new CustomRequest(
+                    Request.Method.POST,
+                    Data._URL,
+                    Data.data,
+                    new Response.Listener<JSONObject>(){
+                        @Override
+                        public void onResponse(JSONObject response){
+                            try{
+                                String sTotalMonthlyNeed = "ERR";
+                                String sTotalMonthlyWant = "ERR";
+                                String sIncome = "ERR";
+                                String sDifference = "ERR";
+
+                                try{
+                                    Data.res = response;
+                                    Log.d("onResponse fired", Data.res.toString());
+
+                                    sTotalMonthlyNeed= Integer.toString((Integer)Data.res.get("totalMonthlyNeed"));
+                                    sTotalMonthlyWant = Integer.toString((Integer)Data.res.get("totalMonthlyWant"));
+                                    sIncome = Integer.toString((Integer)Data.res.get("income"));
+
+                                    }
+                                    catch(Exception e){
+                                        Log.d("error with JSON", e.toString());
+                                    }
+
+                                    //sDifference = String.valueOf((Integer)Data.res.get("income") - ((Integer)Data.res.get("totalMonthlyWant") + (Integer)Data.res.get("totalMonthlyNeed")));
+
+                                    TextView totalMonthlyNeed = (TextView) rootView.findViewById(R.id.results_totalMonthlyNeed);
+                                    totalMonthlyNeed.setText(sTotalMonthlyNeed);
+
+                                    TextView totalMonthlyWant = (TextView) rootView.findViewById(R.id.results_totalMonthlyWant);
+                                    totalMonthlyWant.setText(sTotalMonthlyWant);
+
+                                    TextView income = (TextView) rootView.findViewById(R.id.results_income);
+                                    income.setText(sIncome);
+
+                                    TextView difference = (TextView) rootView.findViewById(R.id.results_difference);
+                                    difference.setText(sDifference);
+                            }
+                            catch(Exception e){
+                                e.printStackTrace();
+                            }
+                        }
+
+                    },
+                    new Response.ErrorListener(){
+                        @Override
+                        public void onErrorResponse(VolleyError error){
+                            error.printStackTrace();
+                        }
+                    });
+
+            rq.add(jsReq);
+            Data.NEW_SESSION = false;
+        }
+        else{
+
+        }
+    }
+
 }

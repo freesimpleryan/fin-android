@@ -33,6 +33,7 @@ public class Main_Application extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Data.init();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_application);
 
@@ -122,8 +123,8 @@ public class Main_Application extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
-            return 13;
+            // Total pages
+            return 14;
         }
 
         @Override
