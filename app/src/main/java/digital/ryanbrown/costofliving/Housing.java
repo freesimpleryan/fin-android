@@ -12,7 +12,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * Created by Ryan on 9/26/2015.
@@ -46,6 +49,8 @@ public class Housing extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_housing, container, false);
 
         final TextView tv = (TextView) rootView.findViewById(R.id.housing);
+        final TextView quote = (TextView) rootView.findViewById(R.id.housing_quote_label);
+        quote.setText(getRandomQuote());
 
         tv.addTextChangedListener(new TextWatcher() {
 
@@ -66,6 +71,20 @@ public class Housing extends Fragment {
         });
 
         return rootView;
+    }
+
+    private int getRandomQuote(){
+        Random rand = new Random();
+        ArrayList<Integer> quotes = new ArrayList();
+
+        quotes.add(R.string.HOUSING_1);
+        quotes.add(R.string.HOUSING_2);
+        quotes.add(R.string.HOUSING_3);
+        quotes.add(R.string.HOUSING_4);
+        quotes.add(R.string.HOUSING_5);
+
+        int quote = rand.nextInt(quotes.size());
+        return quotes.get(quote);
     }
 
 }

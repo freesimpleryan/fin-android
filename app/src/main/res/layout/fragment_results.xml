@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,7 +10,7 @@
     tools:context=".Main_Application$Results"
     android:orientation="vertical">
 
-
+    <TableRow>
     <TextView android:id="@+id/results_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,88 +18,71 @@
         android:text="@string/results_text"
         android:layout_gravity="center"
         android:layout_weight="1" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_weight="1">
+    </TableRow>
+    <TableRow>
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textColor="#FFFFFF"
-            android:layout_gravity="center"
+            android:layout_gravity="end"
             android:text="@string/results_text_need"
             android:layout_weight="1"/>
         <TextView android:id="@+id/results_totalMonthlyNeed"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textColor="#FFFFFF"
-            android:layout_gravity="right"
+            android:layout_gravity="start"
             android:layout_weight="1"/>
-    </LinearLayout>
+    </TableRow>
 
 
-    <LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-        android:layout_weight="1">
+    <TableRow>
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textColor="#FFFFFF"
-            android:layout_gravity="center"
+            android:layout_gravity="end"
             android:text="@string/results_text_want"
             android:layout_weight="1"/>
         <TextView android:id="@+id/results_totalMonthlyWant"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textColor="#FFFFFF"
-            android:layout_gravity="right"
+            android:layout_gravity="start"
             android:layout_weight="1"/>
-    </LinearLayout>
+    </TableRow>
 
-    <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-        android:layout_weight="1">
+    <TableRow>
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textColor="#FFFFFF"
-            android:layout_gravity="center"
+            android:layout_gravity="end"
             android:text="@string/results_text_income"
             android:layout_weight="1"/>
         <TextView android:id="@+id/results_income"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textColor="#FFFFFF"
-            android:layout_gravity="right"
+            android:layout_gravity="start"
             android:layout_weight="1"/>
-    </LinearLayout>
+    </TableRow>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_weight="1">
+    <TableRow>
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textColor="#FFFFFF"
-            android:layout_gravity="center"
+            android:layout_gravity="end"
             android:text="@string/results_text_difference"
             android:layout_weight="1"/>
         <TextView android:id="@+id/results_difference"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textColor="#FFFFFF"
-            android:layout_gravity="right"
+            android:layout_gravity="start"
             android:layout_weight="1"/>
-    </LinearLayout>
+    </TableRow>
 
 
-
-</LinearLayout>
+</TableLayout>

@@ -16,7 +16,7 @@
         android:textColor="#FFFFFF"
         android:text="Inspirational quote here."
         android:layout_gravity="center"
-        android:layout_weight="1" />
+        android:layout_weight="0.5" />
 
     <ImageView
         android:id="@+id/medical_image"
@@ -32,12 +32,12 @@
         android:textColor="#FFFFFF"
         android:text="@string/medical_text"
         android:layout_gravity="center"
-        android:layout_weight="1" />
+        android:layout_weight="0.5" />
 
     <EditText android:id="@+id/medical" android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_weight="1"
+        android:layout_weight="0.5"
         android:inputType="numberDecimal"
         android:singleLine="false" />
 
@@ -47,12 +47,12 @@
         android:textColor="#FFFFFF"
         android:text="@string/medical_text_insurance"
         android:layout_gravity="center"
-        android:layout_weight="1" />
+        android:layout_weight="0.5" />
 
     <EditText android:id="@+id/medical_insurance" android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_weight="1"
+        android:layout_weight="0.5"
         android:inputType="numberDecimal"
         android:singleLine="false" />
 
@@ -62,7 +62,7 @@
         android:textColor="#FFFFFF"
         android:text="@string/swipe_message_text"
         android:layout_gravity="center"
-        android:layout_weight="1" />
+        android:layout_weight="0.5" />
 
 
 </LinearLayout>

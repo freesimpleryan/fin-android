@@ -9,6 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 /**
  * Created by Ryan on 9/26/2015.
  */
@@ -41,6 +44,8 @@ public class Medical extends Fragment {
 
         final TextView tvMedical = (TextView) rootView.findViewById(R.id.medical);
         final TextView tvInsurance = (TextView) rootView.findViewById(R.id.medical_insurance);
+        final TextView quote = (TextView) rootView.findViewById(R.id.medical_quote_label);
+        quote.setText(getRandomQuote());
 
         tvMedical.addTextChangedListener(new TextWatcher() {
 
@@ -80,4 +85,19 @@ public class Medical extends Fragment {
 
         return rootView;
     }
+
+    private int getRandomQuote(){
+        Random rand = new Random();
+        ArrayList<Integer> quotes = new ArrayList();
+
+        quotes.add(R.string.MEDICAL_1);
+        quotes.add(R.string.MEDICAL_2);
+        quotes.add(R.string.MEDICAL_3);
+        quotes.add(R.string.MEDICAL_4);
+        quotes.add(R.string.MEDICAL_5);
+
+        int quote = rand.nextInt(quotes.size());
+        return quotes.get(quote);
+    }
+
 }

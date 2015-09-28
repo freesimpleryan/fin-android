@@ -10,6 +10,9 @@ import android.view.ViewGroup;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 /**
  * Created by Ryan on 9/26/2015.
  */
@@ -49,6 +52,8 @@ public class Transportation extends Fragment {
         final TextView lcarInsurance = (TextView) rootView.findViewById(R.id.transportation_label_insurance);
 
         final RadioGroup rTransportation = (RadioGroup) rootView.findViewById(R.id.transportation_picker);
+        final TextView quote = (TextView) rootView.findViewById(R.id.transportation_quote_label);
+        quote.setText(getRandomQuote());
 
         rTransportation.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -146,4 +151,19 @@ public class Transportation extends Fragment {
 
         return rootView;
     }
+
+    private int getRandomQuote(){
+        Random rand = new Random();
+        ArrayList<Integer> quotes = new ArrayList();
+
+        quotes.add(R.string.TRANSPORTATION_1);
+        quotes.add(R.string.TRANSPORTATION_2);
+        quotes.add(R.string.TRANSPORTATION_3);
+        quotes.add(R.string.TRANSPORTATION_4);
+        quotes.add(R.string.TRANSPORTATION_5);
+
+        int quote = rand.nextInt(quotes.size());
+        return quotes.get(quote);
+    }
+
 }

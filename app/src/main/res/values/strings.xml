@@ -22,7 +22,7 @@
     <string name="medical_text">Per month, how much do you spend on medical needs?</string>
     <string name="medical_text_insurance">How much on medical insurance?</string>
     <string name="phone_text">Per month, how much do you spend on your phone?</string>
-    <string name="results_text">Here are your results:</string>
+    <string name="results_text">Here are your results</string>
     <string name="savings_text">What percent of your money do you save?</string>
 
     <string name="transportation_text_car">Do you own a car?</string>

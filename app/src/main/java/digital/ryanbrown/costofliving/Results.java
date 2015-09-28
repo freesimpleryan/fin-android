@@ -112,6 +112,9 @@ public class Results extends Fragment {
                                 if(dDifference < 0){
                                     difference.setTextColor(Color.parseColor("#CC0000"));
                                 }
+                                else if(dDifference > 0){
+                                    difference.setTextColor(Color.parseColor("#00CC66"));
+                                }
                             }
                             catch(Exception e){
                                 e.printStackTrace();

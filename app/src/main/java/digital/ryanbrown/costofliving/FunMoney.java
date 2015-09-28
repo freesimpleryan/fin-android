@@ -9,6 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 /**
  * Created by Ryan on 9/26/2015.
  */
@@ -40,6 +43,8 @@ public class FunMoney extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_funmoney, container, false);
 
         final TextView tv = (TextView) rootView.findViewById(R.id.funmoney);
+        final TextView quote = (TextView) rootView.findViewById(R.id.funmoney_quote_label);
+        quote.setText(getRandomQuote());
 
         tv.addTextChangedListener(new TextWatcher(){
 
@@ -62,4 +67,16 @@ public class FunMoney extends Fragment {
 
         return rootView;
     }
+
+    private int getRandomQuote(){
+        Random rand = new Random();
+        ArrayList<Integer> quotes = new ArrayList();
+
+        quotes.add(R.string.FUNMONEY_1);
+        quotes.add(R.string.FUNMONEY_2);
+
+        int quote = rand.nextInt(quotes.size());
+        return quotes.get(quote);
+    }
+
 }

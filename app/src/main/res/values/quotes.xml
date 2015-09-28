@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="HOUSING_1"><i>"I told my mother-in-law that my house was her house, and she said, ‘Get the hell off my property.’"\n- Joan Rivers</i></string>
+    <string name="HOUSING_2"><i>"Where we love is home - home that our feet may leave, but not our hearts."\n- Oliver Wendell Holmes</i></string>
+    <string name="HOUSING_3"><i>"Cleaning your house while your kids are still growing up is like shoveling the walk before it stops snowing."\n- Phyllis Diller</i></string>
+    <string name="HOUSING_4"><i>"A house is not a home unless it contains food and fire for the mind as well as the body."\n- Benjamin Franklin</i></string>
+    <string name="HOUSING_5"><i>"Decorate your home. It gives the illusion that your life is more interesting than it really is."\n- Charles M. Schulz</i></string>
+
+    <string name="ELECTRICITY_1"><i>"Electricity is really just organized lightning."\n- George Carlin</i></string>
+    <string name="ELECTRICITY_2"><i>"And God said, 'Let there be light' and there was light, but the Electricity Board said He would have to wait until Thursday to be connected."\n- Spike Milligan</i></string>
+    <string name="ELECTRICITY_3"><i>"Benjamin Franklin may have discovered electricity, but it was the man who invented the meter who made the money."\n- Earl Wilson</i></string>
+
+    <string name="WATER_1"><i>"Water is the driving force of all nature."\n- Leonardo da Vinci</i></string>
+    <string name="WATER_2"><i>"Thousands have lived without love, not one without water."\n- W.H. Auden</i></string>
+    <string name="WATER_3"><i>"My fake plants died because I did not pretend to water them."\n- Mitch Hedberg</i></string>
+    <string name="WATER_4"><i>"I believe that water is the only drink for a wise man."\n- Henry David Thoreau</i></string>
+    <string name="WATER_5"><i>"No water, no life. No blue, no green."\n- Sylvia Earle</i></string>
+
+    <string name="PHONE_1"><i>"As a teenager you are at the last stage in your life when you will be happy to hear that the phone is for you."\n- Fran Lebowitz</i></string>
+    <string name="PHONE_2"><i>"If you were going to die soon and had only one phone call you could make, who would you call and what would you say? And why are you waiting?"\n- Stephen Levine</i></string>
+    <string name="PHONE_3"><i>"Smartphones. Who cares? Smartphones. I only have dummy phones."\n- Don Rickles</i></string>
+    <string name="PHONE_4"><i>"If it's the Psychic Network, why do they need a phone number?"\n- Robin Williams</i></string>
+    <string name="PHONE_5"><i>"Telephone, n. An invention of the devil which abrogates some of the advantages of making a disagreeable person keep his distance."\n- Ambrose Bierce</i></string>
+
+    <string name="INTERNET_1"><i>"We are all now connected by the Internet, like neurons in a giant brain."\n- Stephen Hawking</i></string>
+    <string name="INTERNET_2"><i>"The internet is a great way to get on the net."\n- Bob Dole</i></string>
+    <string name="INTERNET_3"><i>"The internet is becoming the town square for the global village of tomorrow."\n- Bill Gates</i></string>
+    <string name="INTERNET_4"><i>"Getting information off the internet is like taking a drink from a fire hydrant."\n- Mitchell Kapor</i></string>
+
+    <string name="CABLE_1"><i>"I must say I find television very educational. The minute somebody turns it on, I go to the library and read a good book."\n- Groucho Marx</i></string>
+    <string name="CABLE_2"><i>"Television has brought back murder into the home - where it belongs."\n- Alfred Hitchcock</i></string>
+    <string name="CABLE_3"><i>"In Beverly Hills... they don't throw their garbage away. They make it into television shows."\n- Woody Allen</i></string>
+
+    <string name="TRANSPORTATION_1"><i>"The best car safety device is a rear-view mirror with a cop in it."\n- Dudley Moore</i></string>
+    <string name="TRANSPORTATION_2"><i>"Have you ever noticed that anybody driving slower than you is an idiot, and anyone going faster than you is a maniac?"\n- George Carlin</i></string>
+    <string name="TRANSPORTATION_3"><i>"I had to stop driving my car for a while... the tires got dizzy."\n- Steven Wright</i></string>
+    <string name="TRANSPORTATION_4"><i>"I often wonder how far I'd go for love. I guess it all depends on the price of gas."\n- Jarod Kintz</i></string>
+    <string name="TRANSPORTATION_5"><i>"The reason gas prices are so high is because the oil is in Texas and Oklahoma and all the dipsticks are in Washington."\n- Yakov Smirnoff</i></string>
+
+    <string name="MEDICAL_1"><i>"Never go to a doctor whose office plants have died."\n- Erma Bombeck</i></string>
+    <string name="MEDICAL_2"><i>"A hospital bed is a parked taxi with the meter running."\n- Groucho Marx</i></string>
+    <string name="MEDICAL_3"><i>"You may not be able to read a doctor's handwriting and prescription, but you'll notice his bills are neatly typewritten."\n- Earl Wilson</i></string>
+    <string name="MEDICAL_4"><i>"It is health that is real wealth, and not pieces of gold and silver."\n- Mahatma Gandhi</i></string>
+    <string name="MEDICAL_5"><i>"To keep the body in good health is a duty... otherwise we shall not be able to keep our mind strong and clear."\n- Buddha</i></string>
+
+    <string name="DEBT_1"><i>"Credit is an 'I love debt' score."\n- Dave Ramsey</i></string>
+    <string name="DEBT_2"><i>Never spend your money before you have it."\n- Thomas Jefferson</i></string>
+    <string name="DEBT_3"><i>"Debt is normal. Be weird."\n- Dave Ramsey</i></string>
+    <string name="DEBT_4"><i>"A bank is a place that will lend you money if you can prove that you don't need it."\n- Bob Hope</i></string>
+
+    <string name="GROCERIES_1"><i>"There is no sincerer love than the love of food."\n- George Bernard Shaw</i></string>
+    <string name="GROCERIES_2"><i>"Life expectancy would grow by leaps and bounds if green vegetables smelled as good as bacon."\n- Doug Larson</i></string>
+    <string name="GROCERIES_3"><i>"It's okay to eat fish because they don't have any feelings."\n- Kurt Cobain</i></string>
+    <string name="GROCERIES_4"><i>"When a man's stomach is full it makes no difference whether he is rich or poor."\n- Euripides</i></string>
+
+    <string name="SAVINGS_1"><i>"Do not save what is left after spending, but spend what is left after saving."\n- Warren Buffet</i></string>
+    <string name="SAVINGS_2"><i>"Beware of little expenses; a small leak will sink a great ship."\n- Benjamin Franklin</i></string>
+    <string name="SAVINGS_3"><i>"Save your money. You're going to need twice as much money in your old age as you think."\n- Michael Caine</i></string>
+
+    <string name="FUNMONEY_1"><i>"Winning is only half of it. Having fun is the other half."\n- Bum Phillips</i></string>
+    <string name="FUNMONEY_2"><i>"Never, ever underestimate the importance of having fun."\n- Randy Pausch</i></string>
+
+
+</resources>
