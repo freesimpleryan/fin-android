@@ -34,10 +34,27 @@
         android:layout_gravity="center"
         android:layout_weight="1" />
 
-    <NumberPicker android:id="@+id/medical" android:layout_width="wrap_content"
+    <EditText android:id="@+id/medical" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:inputType="numberDecimal"
+        android:singleLine="false" />
+
+    <TextView android:id="@+id/medical_label_insurance"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:textColor="#FFFFFF"
+        android:text="@string/medical_text_insurance"
         android:layout_gravity="center"
         android:layout_weight="1" />
+
+    <EditText android:id="@+id/medical_insurance" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:inputType="numberDecimal"
+        android:singleLine="false" />
 
     <TextView android:id="@+id/swipe_message"
         android:layout_width="wrap_content"

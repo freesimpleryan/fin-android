@@ -50,9 +50,9 @@ public class Data {
         data.put("savingsPercent", "0.0");
         data.put("weeklyFunMoney", "0.0");
         data.put("income", "0.0");
-        data.put("gender", null);
+        data.put("gender", "");
         data.put("age", "0.0");
-
+        data.put("transportation", "0.0");
     }
 
 

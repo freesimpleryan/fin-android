@@ -13,25 +13,34 @@
     <string name="testing">Testing text</string>
 
     <string name="housing_text">Per month, how much do you spend on housing?</string>
-    <string name="cable_text">Per month, ow much do you spend on cable?</string>
+    <string name="cable_text">Per month, how much do you spend on cable?</string>
     <string name="debts_text">Per month, how much do you owe creditors?</string>
     <string name="electricity_text">Per month, how much do you spend on electricity?</string>
-    <string name="funmoney_text">Per week, how much money do you spend for yourself?</string>
-    <string name="groceries_text">Per week, how much money do you spend on food?</string>
-    <string name="internet_text">Per month, how much money do you spend on internet?</string>
-    <string name="medical_text">Per month, how much money do you spend on medical needs?</string>
+    <string name="funmoney_text">Per week, how much do you spend for yourself?</string>
+    <string name="groceries_text">Per week, how much do you spend on food?</string>
+    <string name="internet_text">Per month, how much do you spend on internet?</string>
+    <string name="medical_text">Per month, how much do you spend on medical needs?</string>
     <string name="medical_text_insurance">How much on medical insurance?</string>
-    <string name="phone_text">Per month, how much money do you spend on your phone?</string>
+    <string name="phone_text">Per month, how much do you spend on your phone?</string>
     <string name="results_text">Here are your results:</string>
     <string name="savings_text">What percent of your money do you save?</string>
+
     <string name="transportation_text_car">Do you own a car?</string>
     <string name="transportation_text_nocar">Per month, how much do you spend on transportation?</string>
-    <string name="transportation_text_gas">Per week, how much money do you spend on gas?</string>
-    <string name="transportation_text_insurance">Per month, how much money do you spend on car insurance?</string>
-    <string name="water_text">Per month, how much money do you spend on car insurance?</string>
+    <string name="transportation_text_gas">Per week, how much do you spend on gas?</string>
+    <string name="transportation_text_insurance">Per month, how much do you spend on car insurance?</string>
+
+    <string name="water_text">Per month, how much do you spend on car insurance?</string>
     <string name="optional_text">The following are optional.</string>
     <string name="optional_text_gender">What gender do you identify as?</string>
-    <string name="optional_age">What is your age?</string>
-    <string name="optional_income">What is your income?</string>
+    <string name="optional_text_age">What is your age?</string>
+    <string name="optional_text_income">What is your income?</string>
+
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="other">Other</string>
+
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 
 </resources>
