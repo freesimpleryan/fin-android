@@ -22,7 +22,7 @@
         android:id="@+id/debts_image"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:src="@mipmap/ic_placeholder"
+        android:src="@mipmap/ic_debts"
         android:layout_gravity="center"
         android:layout_weight="1" />
 

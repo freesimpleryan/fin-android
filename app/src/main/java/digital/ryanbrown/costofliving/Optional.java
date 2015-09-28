@@ -43,13 +43,15 @@ public class Optional extends Fragment {
         final TextView tvIncome = (TextView) rootView.findViewById(R.id.income);
         final TextView tvAge = (TextView) rootView.findViewById(R.id.age);
         final RadioGroup rGender = (RadioGroup) rootView.findViewById(R.id.gender_picker);
+        final RadioGroup rIncome = (RadioGroup) rootView.findViewById(R.id.income_picker);
 
+        rIncome.check(R.id.income_hourly);
         rGender.check(R.id.gender_other);
 
         rGender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch(checkedId){
+                switch (checkedId) {
                     case R.id.gender_female:
                         Data.data.put("gender", "female");
                         break;
@@ -64,11 +66,52 @@ public class Optional extends Fragment {
             }
         });
 
+        rIncome.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                int money = 0;
+                try {
+                    money = Integer.parseInt(tvIncome.getText().toString());
+                } catch (Exception e) {
+                }
+                switch (checkedId) {
+                    case R.id.income_hourly:
+                        money *= 40;
+                        money *= 4;
+                        break;
+                    case R.id.income_monthly:
+                        break;
+                    case R.id.income_yearly:
+                        money /= 12;
+                        break;
+                }
+                Data.data.put("income", Integer.toString(money));
+            }
+        });
+
         tvIncome.addTextChangedListener(new TextWatcher() {
 
             @Override
             public void afterTextChanged(Editable s) {
-                Data.data.put("income", tvIncome.getText().toString());
+                int incomeSelector = rIncome.getCheckedRadioButtonId();
+                int money = 0;
+                try {
+                    money = Integer.parseInt(tvIncome.getText().toString());
+                }
+                catch(Exception e){}
+
+                switch (incomeSelector) {
+                    case R.id.income_hourly:
+                        money *= 40;
+                        money *= 4;
+                        break;
+                    case R.id.income_monthly:
+                        break;
+                    case R.id.income_yearly:
+                        money /= 12;
+                        break;
+                }
+                Data.data.put("income", Integer.toString(money));
             }
 
             @Override

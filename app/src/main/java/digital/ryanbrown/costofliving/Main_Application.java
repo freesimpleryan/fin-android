@@ -2,6 +2,7 @@ package digital.ryanbrown.costofliving;
 
 import java.util.Locale;
 
+import android.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -31,7 +32,6 @@ public class Main_Application extends AppCompatActivity {
      */
     ViewPager mViewPager;
 
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         Data.init();
         super.onCreate(savedInstanceState);

@@ -33,19 +33,6 @@ public class CustomRequest extends Request<JSONObject> {
         this.params = params;
     }
 
-    public CustomRequest(int leaveNull, int method, String url, Map<String, Object> params,
-                         Listener<JSONObject> responseListener, ErrorListener errorListener) {
-        super(method, url, errorListener);
-        Map<String, String> newParams = new HashMap();
-
-        for(Map.Entry<String, Object> entry : params.entrySet()){
-            newParams.put(entry.getKey(), entry.getValue().toString());
-        }
-
-        this.listener = responseListener;
-        this.params = newParams;
-    }
-
     protected Map<String, String> getParams()
             throws com.android.volley.AuthFailureError {
         return params;

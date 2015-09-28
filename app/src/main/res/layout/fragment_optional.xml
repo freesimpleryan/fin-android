@@ -34,6 +34,25 @@
         android:inputType="numberDecimal"
         android:singleLine="false" />
 
+    <RadioGroup android:id="@+id/income_picker"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <RadioButton android:id="@+id/income_hourly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hourly" />
+        <RadioButton android:id="@+id/income_monthly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/monthly" />
+        <RadioButton android:id="@+id/income_yearly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/yearly" />
+    </RadioGroup>
+
     <TextView android:id="@+id/optional_label_age"
         android:layout_width="wrap_content"
         android:layout_height="0dp"

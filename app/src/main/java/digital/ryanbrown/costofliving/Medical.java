@@ -64,7 +64,7 @@ public class Medical extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                Data.data.put("medical", tvInsurance.getText().toString());
+                Data.data.put("healthInsurance", tvInsurance.getText().toString());
             }
 
             @Override

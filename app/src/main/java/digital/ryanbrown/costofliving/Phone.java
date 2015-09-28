@@ -39,13 +39,13 @@ public class Phone extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_phone, container, false);
 
-        final TextView phone = (TextView) rootView.findViewById(R.id.phone);
+        final TextView tv = (TextView) rootView.findViewById(R.id.phone);
 
-        phone.addTextChangedListener(new TextWatcher() {
+        tv.addTextChangedListener(new TextWatcher() {
 
             @Override
             public void afterTextChanged(Editable s) {
-                Data.data.put("phone", phone.getText().toString());
+                Data.data.put("phone", tv.getText().toString());
             }
 
             @Override

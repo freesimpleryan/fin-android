@@ -39,13 +39,13 @@ public class Savings extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_savings, container, false);
 
-        final TextView savings = (TextView) rootView.findViewById(R.id.savings);
+        final TextView tv = (TextView) rootView.findViewById(R.id.savings);
 
-        savings.addTextChangedListener(new TextWatcher() {
+        tv.addTextChangedListener(new TextWatcher() {
 
             @Override
             public void afterTextChanged(Editable s) {
-                Data.data.put("savings", savings.getText().toString());
+                Data.data.put("savingsPercent", tv.getText().toString());
             }
 
             @Override

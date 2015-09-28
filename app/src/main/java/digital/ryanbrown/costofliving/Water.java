@@ -39,13 +39,13 @@ public class Water extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_water, container, false);
 
-        final TextView water = (TextView) rootView.findViewById(R.id.water);
+        final TextView tv = (TextView) rootView.findViewById(R.id.water);
 
-        water.addTextChangedListener(new TextWatcher() {
+        tv.addTextChangedListener(new TextWatcher() {
 
             @Override
             public void afterTextChanged(Editable s) {
-                Data.data.put("savings", water.getText().toString());
+                Data.data.put("water", tv.getText().toString());
             }
 
             @Override

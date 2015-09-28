@@ -13,39 +13,93 @@
 
     <TextView android:id="@+id/results_label"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:textColor="#FFFFFF"
         android:text="@string/results_text"
         android:layout_gravity="center"
         android:layout_weight="1" />
 
-    <TextView android:id="@+id/results_totalMonthlyNeed"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:textColor="#FFFFFF"
-        android:layout_gravity="center"
-        android:layout_weight="1" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="center"
+            android:text="@string/results_text_need"
+            android:layout_weight="1"/>
+        <TextView android:id="@+id/results_totalMonthlyNeed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="right"
+            android:layout_weight="1"/>
+    </LinearLayout>
 
-    <TextView android:id="@+id/results_totalMonthlyWant"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:textColor="#FFFFFF"
-        android:layout_gravity="center"
-        android:layout_weight="1" />
 
-    <TextView android:id="@+id/results_income"
+    <LinearLayout
     android:layout_width="wrap_content"
-    android:layout_height="0dp"
-    android:textColor="#FFFFFF"
-    android:layout_gravity="center"
-    android:layout_weight="1" />
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+        android:layout_weight="1">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="center"
+            android:text="@string/results_text_want"
+            android:layout_weight="1"/>
+        <TextView android:id="@+id/results_totalMonthlyWant"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="right"
+            android:layout_weight="1"/>
+    </LinearLayout>
 
-    <TextView android:id="@+id/results_difference"
+    <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+        android:layout_weight="1">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="center"
+            android:text="@string/results_text_income"
+            android:layout_weight="1"/>
+        <TextView android:id="@+id/results_income"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="right"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:textColor="#FFFFFF"
-        android:layout_gravity="center"
-        android:layout_weight="1" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="center"
+            android:text="@string/results_text_difference"
+            android:layout_weight="1"/>
+        <TextView android:id="@+id/results_difference"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="right"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
 
 
 </LinearLayout>

@@ -17,9 +17,6 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.JSONObject;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
 
 /**
  * Created by Ryan on 9/26/2015.
@@ -74,22 +71,22 @@ public class Results extends Fragment {
                                 String sIncome = "ERR";
                                 String sDifference = "ERR";
 
-                                int iTotalMonthlyNeed = 0;
-                                int iTotalMonthlyWant = 0;
-                                int iIncome = 0;
-                                int iDifference = 0;
+                                double dTotalMonthlyNeed = 0;
+                                double dTotalMonthlyWant = 0;
+                                double dIncome = 0;
+                                double dDifference = 0;
 
                                 try{
                                     Data.res = response;
                                     Log.d("onResponse fired", Data.res.toString());
 
-                                    iTotalMonthlyNeed = (Integer)Data.res.get("totalMonthlyNeed");
-                                    iTotalMonthlyWant = (Integer)Data.res.get("totalMonthlyWant");
-                                    iIncome = (Integer)Data.res.get("income");
+                                    dTotalMonthlyNeed = Data.res.getDouble("totalMonthlyNeed");
+                                    dTotalMonthlyWant = Data.res.getDouble("totalMonthlyWant");
+                                    dIncome = Data.res.getDouble("income");
 
-                                    sTotalMonthlyNeed= Integer.toString(iTotalMonthlyNeed);
-                                    sTotalMonthlyWant = Integer.toString(iTotalMonthlyWant);
-                                    sIncome = Integer.toString(iIncome);
+                                    sTotalMonthlyNeed= Double.toString(dTotalMonthlyNeed);
+                                    sTotalMonthlyWant = Double.toString(dTotalMonthlyWant);
+                                    sIncome = Double.toString(dIncome);
 
                                 }
                                 catch(Exception e){
@@ -97,7 +94,8 @@ public class Results extends Fragment {
                                     e.printStackTrace();
                                 }
 
-                                sDifference = Integer.toString(iIncome - (iTotalMonthlyNeed + iTotalMonthlyWant));
+                                dDifference = dIncome - (dTotalMonthlyNeed + dTotalMonthlyWant);
+                                sDifference = Double.toString(dDifference);
 
 
                                 TextView totalMonthlyNeed = (TextView) rootView.findViewById(R.id.results_totalMonthlyNeed);
@@ -111,7 +109,7 @@ public class Results extends Fragment {
 
                                 TextView difference = (TextView) rootView.findViewById(R.id.results_difference);
                                 difference.setText(sDifference);
-                                if(iDifference < 0){
+                                if(dDifference < 0){
                                     difference.setTextColor(Color.parseColor("#CC0000"));
                                 }
                             }
@@ -135,5 +133,6 @@ public class Results extends Fragment {
 
         }
     }
+
 
 }
