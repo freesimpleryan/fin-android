@@ -1,5 +1,6 @@
 package digital.ryanbrown.costofliving;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -58,7 +59,7 @@ public class Results extends Fragment {
 
         if(isVisibleToUser && Data.NEW_SESSION){
             final View rootView = this.getView();
-            Data.stubData();
+
             RequestQueue rq = Volley.newRequestQueue(getActivity());
             CustomRequest jsReq = new CustomRequest(
                     Request.Method.POST,
@@ -73,32 +74,46 @@ public class Results extends Fragment {
                                 String sIncome = "ERR";
                                 String sDifference = "ERR";
 
+                                int iTotalMonthlyNeed = 0;
+                                int iTotalMonthlyWant = 0;
+                                int iIncome = 0;
+                                int iDifference = 0;
+
                                 try{
                                     Data.res = response;
                                     Log.d("onResponse fired", Data.res.toString());
 
-                                    sTotalMonthlyNeed= Integer.toString((Integer)Data.res.get("totalMonthlyNeed"));
-                                    sTotalMonthlyWant = Integer.toString((Integer)Data.res.get("totalMonthlyWant"));
-                                    sIncome = Integer.toString((Integer)Data.res.get("income"));
+                                    iTotalMonthlyNeed = (Integer)Data.res.get("totalMonthlyNeed");
+                                    iTotalMonthlyWant = (Integer)Data.res.get("totalMonthlyWant");
+                                    iIncome = (Integer)Data.res.get("income");
 
-                                    }
-                                    catch(Exception e){
-                                        Log.d("error with JSON", e.toString());
-                                    }
+                                    sTotalMonthlyNeed= Integer.toString(iTotalMonthlyNeed);
+                                    sTotalMonthlyWant = Integer.toString(iTotalMonthlyWant);
+                                    sIncome = Integer.toString(iIncome);
 
-                                    //sDifference = String.valueOf((Integer)Data.res.get("income") - ((Integer)Data.res.get("totalMonthlyWant") + (Integer)Data.res.get("totalMonthlyNeed")));
+                                }
+                                catch(Exception e){
+                                    Log.d("error with JSON", e.toString());
+                                    e.printStackTrace();
+                                }
 
-                                    TextView totalMonthlyNeed = (TextView) rootView.findViewById(R.id.results_totalMonthlyNeed);
-                                    totalMonthlyNeed.setText(sTotalMonthlyNeed);
+                                sDifference = Integer.toString(iIncome - (iTotalMonthlyNeed + iTotalMonthlyWant));
 
-                                    TextView totalMonthlyWant = (TextView) rootView.findViewById(R.id.results_totalMonthlyWant);
-                                    totalMonthlyWant.setText(sTotalMonthlyWant);
 
-                                    TextView income = (TextView) rootView.findViewById(R.id.results_income);
-                                    income.setText(sIncome);
+                                TextView totalMonthlyNeed = (TextView) rootView.findViewById(R.id.results_totalMonthlyNeed);
+                                totalMonthlyNeed.setText(sTotalMonthlyNeed);
 
-                                    TextView difference = (TextView) rootView.findViewById(R.id.results_difference);
-                                    difference.setText(sDifference);
+                                TextView totalMonthlyWant = (TextView) rootView.findViewById(R.id.results_totalMonthlyWant);
+                                totalMonthlyWant.setText(sTotalMonthlyWant);
+
+                                TextView income = (TextView) rootView.findViewById(R.id.results_income);
+                                income.setText(sIncome);
+
+                                TextView difference = (TextView) rootView.findViewById(R.id.results_difference);
+                                difference.setText(sDifference);
+                                if(iDifference < 0){
+                                    difference.setTextColor(Color.parseColor("#CC0000"));
+                                }
                             }
                             catch(Exception e){
                                 e.printStackTrace();

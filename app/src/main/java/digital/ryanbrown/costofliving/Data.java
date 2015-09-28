@@ -29,32 +29,30 @@ import java.io.File;
 public class Data {
 
     public static final String _URL = "https://finances-testuserpleaseignore.c9.io/api/financials";
-    public static HashMap<String, String> data = new HashMap();
     public static boolean NEW_SESSION = true;
 
-    //public static HashMap<String, Object> data = new HashMap();
+    public static HashMap<String, String> data = new HashMap();
     public static void init() {
-        /*
-        data.put("housing", 0.0);
-        data.put("electricity", 0.0);
-        data.put("housing", 0.0);
-        data.put("electricity", 25.0);
-        data.put("water", 0.0);
-        data.put("phone", 0.0);
-        data.put("internet", 0.0);
-        data.put("cable", 0.0);
-        data.put("carInsurance", 0.0);
-        data.put("medical", 0.0);
-        data.put("debts", 0.0);
-        data.put("groceries", 0.0);
-        data.put("healthInsurance", 0.0);
-        data.put("gas", 0.0);
-        data.put("savingsPercent", 0.0);
-        data.put("weeklyFunMoney", 0.0);
-        data.put("income", 0.0);
+        data.put("housing", "0.0");
+        data.put("electricity", "0.0");
+        data.put("housing", "0.0");
+        data.put("electricity", "25.0");
+        data.put("water", "0.0");
+        data.put("phone", "0.0");
+        data.put("internet", "0.0");
+        data.put("cable", "0.0");
+        data.put("carInsurance", "0.0");
+        data.put("medical", "0.0");
+        data.put("debts", "0.0");
+        data.put("groceries", "0.0");
+        data.put("healthInsurance", "0.0");
+        data.put("gas", "0.0");
+        data.put("savingsPercent", "0.0");
+        data.put("weeklyFunMoney", "0.0");
+        data.put("income", "0.0");
         data.put("gender", null);
-        data.put("age", 0.0);
-        */
+        data.put("age", "0.0");
+
     }
 
 
