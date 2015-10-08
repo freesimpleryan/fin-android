@@ -52,4 +52,7 @@
     <string name="results_text_income">Monthly income:</string>
     <string name="results_text_difference">Difference:</string>
 
+    <string name="about_alert_title">About</string>
+    <string name="about_alert_text">This is a monthly budgeting app designed to show the difference between monthly wants, needs, and income. Spending money and savings are classified into wants.</string>
+
 </resources>

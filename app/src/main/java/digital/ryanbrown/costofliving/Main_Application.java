@@ -3,6 +3,7 @@ package digital.ryanbrown.costofliving;
 import java.util.Locale;
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -65,6 +66,16 @@ public class Main_Application extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+            alertDialog.setTitle(getResources().getString(R.string.about_alert_title));
+            alertDialog.setMessage(getResources().getString(R.string.about_alert_text));
+            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+            alertDialog.show();
             return true;
         }
 

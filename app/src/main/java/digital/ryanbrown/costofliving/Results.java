@@ -17,6 +17,8 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.JSONObject;
 
+import java.util.HashMap;
+
 
 /**
  * Created by Ryan on 9/26/2015.
@@ -54,88 +56,120 @@ public class Results extends Fragment {
     public void setUserVisibleHint(boolean isVisibleToUser){
         super.setUserVisibleHint(isVisibleToUser);
 
-        if(isVisibleToUser && Data.NEW_SESSION){
-            final View rootView = this.getView();
+            if (isVisibleToUser && Data.NEW_SESSION) {
+                final View rootView = this.getView();
 
-            RequestQueue rq = Volley.newRequestQueue(getActivity());
-            CustomRequest jsReq = new CustomRequest(
-                    Request.Method.POST,
-                    Data._URL,
-                    Data.data,
-                    new Response.Listener<JSONObject>(){
-                        @Override
-                        public void onResponse(JSONObject response){
-                            try{
-                                String sTotalMonthlyNeed = "ERR";
-                                String sTotalMonthlyWant = "ERR";
-                                String sIncome = "ERR";
-                                String sDifference = "ERR";
+                if(Data.DO_LOCAL){
+                    HashMap<String, Double> newData =  new HashMap(Data.calcLocal());
 
-                                double dTotalMonthlyNeed = 0;
-                                double dTotalMonthlyWant = 0;
-                                double dIncome = 0;
-                                double dDifference = 0;
+                    String sTotalMonthlyNeed = "ERR";
+                    String sTotalMonthlyWant = "ERR";
+                    String sIncome = "ERR";
+                    String sDifference = "ERR";
 
-                                try{
-                                    Data.res = response;
-                                    Log.d("onResponse fired", Data.res.toString());
+                    sTotalMonthlyNeed = Double.toString(newData.get("totalMonthlyNeed"));
+                    sTotalMonthlyWant = Double.toString(newData.get("totalMonthlyWant"));
+                    sIncome = Data.data.get("income");
+                    sDifference = Double.toString(newData.get("income") - newData.get("totalMonthly"));
+                    double dDifference = Double.parseDouble(sDifference);
 
-                                    dTotalMonthlyNeed = Data.res.getDouble("totalMonthlyNeed");
-                                    dTotalMonthlyWant = Data.res.getDouble("totalMonthlyWant");
-                                    dIncome = Data.res.getDouble("income");
+                    TextView totalMonthlyNeed = (TextView) rootView.findViewById(R.id.results_totalMonthlyNeed);
+                    totalMonthlyNeed.setText(sTotalMonthlyNeed);
 
-                                    sTotalMonthlyNeed= Double.toString(dTotalMonthlyNeed);
-                                    sTotalMonthlyWant = Double.toString(dTotalMonthlyWant);
-                                    sIncome = Double.toString(dIncome);
+                    TextView totalMonthlyWant = (TextView) rootView.findViewById(R.id.results_totalMonthlyWant);
+                    totalMonthlyWant.setText(sTotalMonthlyWant);
 
-                                }
-                                catch(Exception e){
-                                    Log.d("error with JSON", e.toString());
+                    TextView income = (TextView) rootView.findViewById(R.id.results_income);
+                    income.setText(sIncome);
+
+                    TextView difference = (TextView) rootView.findViewById(R.id.results_difference);
+                    difference.setText(sDifference);
+                    if (dDifference < 0) {
+                        difference.setTextColor(Color.parseColor("#CC0000"));
+                    } else if (dDifference > 0) {
+                        difference.setTextColor(Color.parseColor("#00CC66"));
+                    }
+
+                }
+                else{
+
+                RequestQueue rq = Volley.newRequestQueue(getActivity());
+                CustomRequest jsReq = new CustomRequest(
+                        Request.Method.POST,
+                        Data._URL,
+                        Data.data,
+                        new Response.Listener<JSONObject>() {
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                try {
+                                    String sTotalMonthlyNeed = "ERR";
+                                    String sTotalMonthlyWant = "ERR";
+                                    String sIncome = "ERR";
+                                    String sDifference = "ERR";
+
+                                    double dTotalMonthlyNeed = 0;
+                                    double dTotalMonthlyWant = 0;
+                                    double dIncome = 0;
+                                    double dDifference = 0;
+
+                                    try {
+                                        Data.res = response;
+                                        Log.d("onResponse fired", Data.res.toString());
+
+                                        dTotalMonthlyNeed = Data.res.getDouble("totalMonthlyNeed");
+                                        dTotalMonthlyWant = Data.res.getDouble("totalMonthlyWant");
+                                        dIncome = Data.res.getDouble("income");
+
+                                        sTotalMonthlyNeed = Double.toString(dTotalMonthlyNeed);
+                                        sTotalMonthlyWant = Double.toString(dTotalMonthlyWant);
+                                        sIncome = Double.toString(dIncome);
+
+                                    } catch (Exception e) {
+                                        Log.d("error with JSON", e.toString());
+                                        e.printStackTrace();
+                                    }
+
+                                    dDifference = dIncome - (dTotalMonthlyNeed + dTotalMonthlyWant);
+                                    sDifference = Double.toString(dDifference);
+
+
+                                    TextView totalMonthlyNeed = (TextView) rootView.findViewById(R.id.results_totalMonthlyNeed);
+                                    totalMonthlyNeed.setText(sTotalMonthlyNeed);
+
+                                    TextView totalMonthlyWant = (TextView) rootView.findViewById(R.id.results_totalMonthlyWant);
+                                    totalMonthlyWant.setText(sTotalMonthlyWant);
+
+                                    TextView income = (TextView) rootView.findViewById(R.id.results_income);
+                                    income.setText(sIncome);
+
+                                    TextView difference = (TextView) rootView.findViewById(R.id.results_difference);
+                                    difference.setText(sDifference);
+                                    if (dDifference < 0) {
+                                        difference.setTextColor(Color.parseColor("#CC0000"));
+                                    } else if (dDifference > 0) {
+                                        difference.setTextColor(Color.parseColor("#00CC66"));
+                                    }
+                                } catch (Exception e) {
                                     e.printStackTrace();
                                 }
-
-                                dDifference = dIncome - (dTotalMonthlyNeed + dTotalMonthlyWant);
-                                sDifference = Double.toString(dDifference);
-
-
-                                TextView totalMonthlyNeed = (TextView) rootView.findViewById(R.id.results_totalMonthlyNeed);
-                                totalMonthlyNeed.setText(sTotalMonthlyNeed);
-
-                                TextView totalMonthlyWant = (TextView) rootView.findViewById(R.id.results_totalMonthlyWant);
-                                totalMonthlyWant.setText(sTotalMonthlyWant);
-
-                                TextView income = (TextView) rootView.findViewById(R.id.results_income);
-                                income.setText(sIncome);
-
-                                TextView difference = (TextView) rootView.findViewById(R.id.results_difference);
-                                difference.setText(sDifference);
-                                if(dDifference < 0){
-                                    difference.setTextColor(Color.parseColor("#CC0000"));
-                                }
-                                else if(dDifference > 0){
-                                    difference.setTextColor(Color.parseColor("#00CC66"));
-                                }
                             }
-                            catch(Exception e){
-                                e.printStackTrace();
+
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                error.printStackTrace();
                             }
-                        }
+                        });
 
-                    },
-                    new Response.ErrorListener(){
-                        @Override
-                        public void onErrorResponse(VolleyError error){
-                            error.printStackTrace();
-                        }
-                    });
+                rq.add(jsReq);
+                Data.NEW_SESSION = false;
+            }} else {
 
-            rq.add(jsReq);
-            Data.NEW_SESSION = false;
-        }
-        else{
+            }
 
-        }
     }
+
 
 
 }
